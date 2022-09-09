@@ -1,0 +1,10 @@
+/* selecciona al wraper de este componente */
+/* xlo q sirve para aplicar cambios a todo el componente */
+:host {
+   font-size: 5px;
+}
+
+img {
+   display: block;
+   width: 200px;
+}

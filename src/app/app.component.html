@@ -1,0 +1,39 @@
+<!-- 
+<ng-template [ngIf]="blueClass">
+   <p>the button is blue!!!</p>
+</ng-template>
+-->
+<p *ngIf="blueClass">the button is blue!!!</p>
+
+<!-- ngClass ===> para aplicar clases enteras -->
+<!-- ngStyle ===> para aplicar solo un par de estilos -->
+
+<!-- <button (click)="blueClass = !blueClass" [ngClass]="blueClass ? 'blue' : null"> -->
+<button
+   (click)="blueClass = !blueClass"
+   [ngClass]="{ blue: blueClass }"
+   [ngStyle]="{ 'font-size.px': fontSize }"
+>
+   Change
+</button>
+
+<hr />
+
+<input (keyup)="chamgeImage($event)" [value]="imgURL" />
+
+<app-post [img]="imgURL" (imgSelected)="logImg($event)">
+   <p>Algo de texto</p>
+   <!-- para q renderice este <p> tengo q usar <ng-content></ng-content> en el html de post -->
+</app-post>
+
+<!-- <h1>holi hola {{ name.toUpperCase() }}</h1> -->
+<h1>holi hola {{ name | titlecase }}!</h1>
+<h1>holi hola {{ getName() }}</h1>
+
+<h3>{{ currentDate | date: "fullDate" }}</h3>
+
+<h3>{{ cost | currency: "JPY" }}</h3>
+
+<h3>{{ temperature | number: "1.2-4" }}</h3>
+
+<pre>{{ pizza | json }}</pre>
